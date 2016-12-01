@@ -1,0 +1,43 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Birthday boy</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="icon" href="assets/bdaycake.ico">
+
+    <script>
+    var vid = document.getElementById("bgvid");
+    var pauseButton = document.querySelector("#emon button");
+
+    function vidFade() {
+      vid.classList.add("stopfade");
+    }
+
+    vid.addEventListener('ended', function()
+    {
+    // only functional if "loop" is removed 
+    vid.pause();
+    // to capture IE10
+    vidFade();
+    }); 
+
+
+    </script>
+
+</head>
+<body>    
+    <video poster="assets/emon.png" id="bgvid" playsinline autoplay muted loop>
+        <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposesof illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
+        <source src="assets/emonbw.webm" type="video/webm">
+        <source src="assets/emonbw.mp4" type="video/mp4">
+    </video>
+    <div id="emon">
+        <h1>Desmond Amos</h1>
+        <span id="timer"><script src="js/countdown.js"></script></span><br/><br/><br/><br/><br/>
+        <iframe src="http://files.quizsnack.com/iframe/embed.html?hash=qhk9ejpx&width=250&height=370&wmode=transparent&t=1480558525&width=250&height=370" width="250" height="350" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
+        <p>Hasil paling lambat H+7</p>
+    </div>
+</body>
+</html>
